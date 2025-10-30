@@ -1,0 +1,2578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILT 2025 - Seminario Internacional de Logística y Transporte</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-video {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .hero-video video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            z-index: 0;
+            object-fit: cover;
+            filter: brightness(0.7);
+            transition: filter 0.5s ease;
+        }
+
+        .hero-video:hover video {
+            filter: brightness(0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(0, 102, 51, 0.9) 0%, rgba(0, 51, 25, 0.8) 100%);
+        }
+        
+        .bg-primary {
+            background-color: #006633;
+        }
+        
+        .text-primary {
+            color: #006633;
+        }
+        
+        .border-primary {
+            border-color: #006633;
+        }
+        
+        .hover\:bg-primary:hover {
+            background-color: #00552b;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .infographic-item {
+            transition: all 0.3s ease;
+        }
+        
+        .infographic-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            filter: brightness(1.1);
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .tech-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #006633;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e1e8ed;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: #006633;
+        }
+        
+        .stats-card {
+            background: linear-gradient(135deg, #006633, #004d26);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .innovation-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .innovation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .process-step {
+            position: relative;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .process-step:hover {
+            transform: scale(1.05);
+        }
+        
+        .process-step:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            width: 60px;
+            height: 2px;
+            background: #006633;
+        }
+        
+        .process-step:last-child:before {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .process-step:before {
+                display: none;
+            }
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #006633;
+            border-radius: 50%;
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 10px);
+            background: #006633;
+        }
+        
+        .timeline-item:last-child:after {
+            display: none;
+        }
+        
+        .specialization-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e1e8ed;
+        }
+        
+        .specialization-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: #006633;
+        }
+        
+        .year-selector {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .year-btn {
+            background: #e1e8ed;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .year-btn.active {
+            background: #006633;
+            color: white;
+        }
+        
+        .milestones-container {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+        
+        /* Custom scrollbar */
+        .milestones-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .milestones-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .milestones-container::-webkit-scrollbar-thumb {
+            background: #006633;
+            border-radius: 10px;
+        }
+        
+        /* Floating sidebar */
+        .floating-sidebar {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .sidebar-item {
+            width: 60px;
+            height: 60px;
+            background: #006633;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .sidebar-item:hover {
+            background: #006633;
+            transform: scale(1.1);
+            width: auto;
+            padding: 0 1.5rem;
+            border-radius: 5%;
+        }
+        
+        .sidebar-item:hover i {
+            margin-right: 0.5rem;
+        }
+        
+        .sidebar-item i {
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-item span {
+            display: none;
+            white-space: nowrap;
+        }
+        
+        .sidebar-item:hover span {
+            display: inline;
+        }
+        
+        @media (max-width: 768px) {
+            .floating-sidebar {
+                left: 10px;
+            }
+            
+            .sidebar-item {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .sidebar-item:hover {
+                padding: 0 1rem;
+            }
+        }
+        
+        .collage-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+        }
+        
+        .collage-item:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+        
+        .collage-item:nth-child(2) {
+            grid-column: 3 / 5;
+            grid-row: 1 / 2;
+        }
+        
+        .collage-item:nth-child(3) {
+            grid-column: 3 / 4;
+            grid-row: 2 / 4;
+        }
+        
+        .collage-item:nth-child(4) {
+            grid-column: 4 / 5;
+            grid-row: 2 / 3;
+        }
+        
+        .collage-item:nth-child(5) {
+            grid-column: 4 / 5;
+            grid-row: 3 / 4;
+        }
+        
+        .collage-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .image-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .image-card .content {
+            padding: 1.5rem;
+            background: white;
+        }
+        
+        /* Animaciones mejoradas */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        /* Efecto parallax para secciones */
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* Gradientes mejorados */
+        .gradient-bg {
+            background: linear-gradient(135deg, #006633 0%, #00331a 100%);
+        }
+        
+        .gradient-overlay-2 {
+            background: linear-gradient(45deg, rgba(0, 102, 51, 0.85) 0%, rgba(0, 51, 25, 0.85) 100%);
+        }
+        
+        /* Cards con efecto 3D */
+        .card-3d {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+        }
+        
+        .card-3d:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Botones con efecto hover */
+        .btn-animated {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-animated::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.6s;
+        }
+        
+        .btn-animated:hover::before {
+            left: 100%;
+        }
+        
+        /* Efecto de onda en botones */
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ripple::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .ripple:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(50, 50);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .collage-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .collage-item:nth-child(1) {
+                grid-column: 1 / 3;
+                grid-row: 1 / 2;
+            }
+            
+            .collage-item:nth-child(2) {
+                grid-column: 3 / 4;
+                grid-row: 1 / 2;
+            }
+            
+            .collage-item:nth-child(3) {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+            
+            .collage-item:nth-child(4) {
+                grid-column: 2 / 4;
+                grid-row: 2 / 3;
+            }
+            
+            .collage-item:nth-child(5) {
+                grid-column: 1 / 4;
+                grid-row: 3 / 4;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .collage-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .collage-item {
+                grid-column: 1 !important;
+                grid-row: auto !important;
+            }
+            
+            .hero-video {
+                height: 60vh;
+            }
+            
+            h1 {
+                font-size: 2.5rem !important;
+            }
+            
+            h2 {
+                font-size: 2rem !important;
+            }
+            
+            .process-step:before {
+                display: none;
+            }
+            
+            .grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .md\:grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .md\:grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .md\:grid-cols-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .md\:grid-cols-5 {
+                grid-template-columns: 1fr;
+            }
+            
+            .lg\:grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .lg\:order-1 {
+                order: 1;
+            }
+            
+            .lg\:order-2 {
+                order: 2;
+            }
+            
+            .floating-sidebar {
+                flex-direction: row;
+                top: auto;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                overflow-x: auto;
+                padding: 10px;
+            }
+            
+            .sidebar-item {
+                width: 50px;
+                height: 50px;
+                min-width: 50px;
+            }
+            
+            .sidebar-item:hover {
+                width: 50px;
+                padding: 0;
+            }
+            
+            .sidebar-item span {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem !important;
+            }
+            
+            .text-2xl {
+                font-size: 1.25rem;
+            }
+            
+            .text-xl {
+                font-size: 1.125rem;
+            }
+            
+            .p-8 {
+                padding: 1rem;
+            }
+            
+            .p-6 {
+                padding: 1rem;
+            }
+        }
+        
+        /* Estilos específicos para esta página */
+        .tech-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .tech-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e1e8ed;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: #006633;
+        }
+        
+        .tech-header {
+            background: linear-gradient(135deg, #006633 0%, #00331a 100%);
+            color: white;
+            padding: 2rem;
+        }
+        
+        .tech-content {
+            padding: 2rem;
+        }
+        
+        .tech-subtitle {
+            color: #006633;
+            font-weight: 600;
+        }
+        
+        .tech-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .tech-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e1e8ed;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .tech-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .tech-list li i {
+            color: #006633;
+            margin-right: 1rem;
+            margin-top: 0.25rem;
+        }
+        
+        .timeline-stage {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid #006633;
+        }
+        
+        .research-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 3px solid #006633;
+        }
+        
+        .application-item {
+            background: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 3px solid #00331a;
+        }
+        
+        .tech-badge {
+            display: inline-block;
+            background: #006633;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Backgrounds animados */
+        .animated-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .animated-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                rgba(0, 102, 51, 0.1) 0%, 
+                rgba(0, 51, 25, 0.1) 25%, 
+                rgba(0, 102, 51, 0.1) 50%, 
+                rgba(0, 51, 25, 0.1) 75%, 
+                rgba(0, 102, 51, 0.1) 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            z-index: 0;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .tech-bg-1 { background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c); }
+        .tech-bg-2 { background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b); }
+        .tech-bg-3 { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
+        .tech-bg-4 { background: linear-gradient(135deg, #141e30, #243b55, #141e30); }
+        .tech-bg-5 { background: linear-gradient(135deg, #23074d, #cc5333, #23074d); }
+        .tech-bg-6 { background: linear-gradient(135deg, #1d2b64, #f8cdda, #1d2b64); }
+        .tech-bg-7 { background: linear-gradient(135deg, #000428, #004e92, #000428); }
+        .tech-bg-8 { background: linear-gradient(135deg, #3a6073, #3a7bd5, #3a6073); }
+        
+        /* Efectos interactivos */
+        .interactive-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .interactive-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.5s ease;
+        }
+        
+        .interactive-card:hover::before {
+            transform: scale(1);
+        }
+        
+        /* Galería interactiva */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 1.5rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+        
+        /* Slider de imágenes */
+        .image-slider {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        
+        .slider-container {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .slide {
+            width: 25%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 2rem;
+            color: white;
+            transform: translateY(0);
+        }
+        
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 1rem;
+            z-index: 10;
+        }
+        
+        .slider-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-btn:hover {
+            background: rgba(255,255,255,0.4);
+            transform: scale(1.1);
+        }
+        
+        .slider-dots {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        
+        /* Tarjetas 3D flotantes */
+        .floating-card {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+        
+        .floating-card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+        }
+        
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        
+        .floating-card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .card-front {
+            background: linear-gradient(135deg, #006633, #00331a);
+            color: white;
+        }
+        
+        .card-back {
+            background: white;
+            color: #333;
+            transform: rotateY(180deg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .tech-icon-3d {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .tech-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Ponencias Magistrales Flip Cards */
+        .speaker-card {
+            perspective: 1000px;
+            height: 400px;
+            cursor: pointer;
+        }
+        
+        .speaker-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .speaker-card:hover .speaker-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .speaker-front, .speaker-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .speaker-front {
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .speaker-back {
+            background: linear-gradient(135deg, #006633, #00331a);
+            color: white;
+            padding: 1.5rem;
+            transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+        
+        .speaker-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #006633;
+            margin-bottom: 1rem;
+        }
+        
+        .speaker-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #006633;
+        }
+        
+        .speaker-topic {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .speaker-country {
+            color: #006633;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .speaker-bio {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            text-align: justify;
+        }
+        
+        /* Agenda styling */
+        .agenda-day {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .agenda-header {
+            background: linear-gradient(135deg, #006633, #00331a);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .agenda-item {
+            display: flex;
+            padding: 1.5rem;
+            border-bottom: 1px solid #e1e8ed;
+        }
+        
+        .agenda-item:last-child {
+            border-bottom: none;
+        }
+        
+        .time-slot {
+            min-width: 120px;
+            font-weight: 600;
+            color: #006633;
+            margin-right: 1.5rem;
+        }
+        
+        .event-details h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .event-details p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .event-type {
+            display: inline-block;
+            background: #006633;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Full width video and image gallery */
+        .full-width-video {
+            width: 100%;
+            height: 500px;
+            position: relative;
+        }
+        
+        .full-width-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .full-width-image-slider {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slider-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .slider-image.active {
+            opacity: 1;
+        }
+        
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.5rem;
+        }
+        
+        .slider-nav.prev {
+            left: 1rem;
+        }
+        
+        .slider-nav.next {
+            right: 1rem;
+        }
+        
+        .slider-indicators {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+        
+        .indicator.active {
+            background: white;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .logo-img {
+            max-width: 300px;
+            height: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-img {
+                max-width: 200px;
+            }
+            
+            .full-width-video,
+            .full-width-image-slider {
+                height: 300px;
+            }
+        }
+        .full-width-video iframe {
+  width: 100%;
+  height: 480px;
+}
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Floating Sidebar Menu -->
+    <nav class="floating-sidebar">
+        <a href="#inicio" class="sidebar-item" title="Inicio">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </a>
+        <a href="#introduccion" class="sidebar-item" title="Introducción">
+            <i class="fas fa-info-circle"></i>
+            <span>Introducción</span>
+        </a>
+        <a href="#tematicas" class="sidebar-item" title="Temáticas">
+            <i class="fas fa-th-large"></i>
+            <span>Temáticas</span>
+        </a>
+        <a href="#magistrales" class="sidebar-item" title="Ponencias Magistrales">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <span>Ponencias Magistrales</span>
+        </a>
+        <a href="#agenda" class="sidebar-item" title="Agenda">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Agenda</span>
+        </a>
+        <a href="#directrices" class="sidebar-item" title="Directrices">
+            <i class="fas fa-file-alt"></i>
+            <span>Directrices</span>
+        </a>
+        <a href="#fechas" class="sidebar-item" title="Fechas">
+            <i class="fas fa-clock"></i>
+            <span>Fechas</span>
+        </a>
+        <a href="#inscripcion" class="sidebar-item" title="Inscripción">
+            <i class="fas fa-user-plus"></i>
+            <span>Inscripción</span>
+        </a>
+        <a href="#ubicacion" class="sidebar-item" title="Ubicación">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Ubicación</span>
+        </a>
+        <a href="#comite" class="sidebar-item" title="Comité">
+            <i class="fas fa-users"></i>
+            <span>Comité</span>
+        </a>
+        <a href="#contacto" class="sidebar-item" title="Contacto">
+            <i class="fas fa-envelope"></i>
+            <span>Contacto</span>
+        </a>
+    </nav>
+
+    <!-- Hero Section with Video Background -->
+    <section id="inicio" class="hero-video relative">
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 z-10"></div>
+        <video autoplay muted loop playsinline class="absolute inset-0 object-cover w-full h-full">
+            <source src="https://virprot.com/assets/video/VIDEO2VirprotHome.mp4">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-scientist-using-microscope-40868-large.webm" type="video/webm">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="hero-content container mx-auto px-6 relative z-20 h-full flex items-center justify-center">
+            <div class="text-white max-w-4xl text-center">
+                <div class="logo-container">
+                    <img src="https://upec.edu.ec/wp-content/uploads/elementor/thumbs/Logo_Principal-ralkdxwwqpf92usicbhhmi8nhirkosn4z9l4t7nyda.png" alt="Logo UPEC" class="logo-img">
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up">II Seminario Internacional de Gestión Logística, Cadena de Suministro y Transporte</h1>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-fade-in-up">SILT 2025</h2>
+                <p class="text-2xl mb-4">Tendencias emergentes en Logística y Cadena de Suministro</p>
+                <p class="text-xl mb-8">Universidad Politécnica Estatal del Carchi (UPEC)</p>
+                <p class="text-xl mb-8">Tulcán, Ecuador | 26-27 Noviembre 2025</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#inscripcion" class="btn-animated bg-[#006633] hover:bg-[#004d26] text-white px-8 py-4 rounded-full font-bold text-lg transition duration-300 shadow-lg transform hover:scale-105">
+                        <i class="fas fa-user-plus mr-2"></i>Inscribirse Ahora
+                    </a>
+                    <a href="#tematicas" class="btn-animated bg-transparent border-2 border-white hover:bg-white hover:text-[#006633] text-white px-8 py-4 rounded-full font-bold text-lg transition duration-300 shadow-lg transform hover:scale-105">
+                        <i class="fas fa-th-large mr-2"></i>Ver Temáticas
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-3xl"></i>
+        </div>
+    </section>
+
+    <!-- Introducción -->
+    <section id="introduccion" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-6">
+                    <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[url('https://miro.medium.com/v2/resize:fit:1360/1*uzVtquVT0jGfbNAf7Qc1UQ.gif')] bg-cover opacity-20"></div>
+        </div>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Introducción</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-[#006633] to-[#00331a] mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="card-3d bg-white p-8 rounded-2xl shadow-xl">
+                    <h3 class="text-2xl font-bold text-[#006633] mb-6">Sobre el Evento</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        El II Seminario Internacional de Gestión Logística, Cadena de Suministro y Transporte (SILT 2025), edición "Tendencias emergentes en Logística y Cadena de Suministro", es un espacio académico de reflexión y análisis sobre la transformación del sector logístico frente a los retos de la era digital.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Este encuentro busca promover el intercambio de conocimientos, experiencias y propuestas innovadoras que impulsen la adopción de Tecnologías 4.0, la sostenibilidad, la eficiencia operativa y la resiliencia en las cadenas de suministro globales.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="tech-badge">Tecnologías 4.0</span>
+                        <span class="tech-badge">Sostenibilidad</span>
+                        <span class="tech-badge">Eficiencia Operativa</span>
+                        <span class="tech-badge">Resiliencia</span>
+                    </div>
+                </div>
+                
+                <div class="card-3d bg-white p-8 rounded-2xl shadow-xl">
+                    <h3 class="text-2xl font-bold text-[#006633] mb-6">Presentación</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        La Carrera de Logística y Transporte de la Universidad Politécnica Estatal del Carchi (UPEC–Ecuador) organiza el II Seminario Internacional de Gestión Logística, Cadena de Suministro y Transporte (SILT 2025), bajo la temática "Tendencias emergentes en Logística y Cadena de Suministro".
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Con el objetivo de reunir a investigadores, profesionales y estudiantes para debatir los avances, desafíos y oportunidades que definen la logística moderna.
+                    </p>
+                    <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-[#006633]">
+                        <p class="text-gray-800 italic">
+                            "En esta edición, el evento se centra en el estudio y aplicación de las Tecnologías 4.0 como eje transversal para la mejora de los procesos logísticos."
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Promocional -->
+            <div class="mt-16">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">Video Promocional del Evento</h3>
+                    <div class="w-24 h-1 bg-gradient-to-r from-[#006633] to-[#00331a] mx-auto"></div>
+                </div>
+<div class="full-width-video rounded-2xl overflow-hidden shadow-2xl">
+  <div >
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/-r7oc5v_bNY?rel=0&modestbranding=1&playsinline=1"
+      title="Video Promocional"
+      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+      referrerpolicy="strict-origin-when-cross-origin"
+      style="position:absolute; inset:0; width:100%; height:100%; border:0;"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+            </div>
+            
+            <!-- Galería de Imágenes -->
+            <div class="mt-16">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">Galería de Imágenes</h3>
+                    <div class="w-24 h-1 bg-gradient-to-r from-[#006633] to-[#00331a] mx-auto"></div>
+                </div>
+                <div class="full-width-image-slider rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="slider-wrapper">
+                        <img src="https://www.fracttal.com/hubfs/realidad%20virtual.png" alt="Logística Moderna" class="slider-image active">
+                        <img src="https://finvalia.es/wp-content/uploads/2025/10/Formacion-inmersiva-Finvalia.webp" alt="Cadena de Suministro" class="slider-image">
+                        <img src="https://softmanagement.com.co/wp-content/uploads/2024/09/20356-1024x682.jpg" alt="Tecnología 4.0" class="slider-image">
+                        <img src="https://www.factible.io/Logistica_28-1.png" alt="Transporte" class="slider-image">
+                    </div>
+                    <button class="slider-nav prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-nav next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="slider-indicators">
+                        <div class="indicator active"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temáticas del Evento -->
+    <section id="tematicas" class="py-20 bg-gradient-to-br from-[#006633] to-[#00331a] text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Temáticas del Evento</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-[#ffd700] to-orange-500 mx-auto mb-8"></div>
+                <p class="text-xl max-w-3xl mx-auto">Enfoque en Tecnologías 4.0 aplicadas a la Logística y Cadena de Suministro</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Temática 1 -->
+                <div class="card-3d bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition duration-300">
+                    <div class="text-4xl text-[#ffd700] mb-4">
+                        <i class="fas fa-vr-cardboard"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tecnologías inmersivas, simulación e ingeniería de instalaciones logísticas</h3>
+                    <ul class="space-y-2 text-gray-200">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Realidad Virtual (VR)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Realidad Aumentada (AR)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Realidad Mixta (MR)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Gemelos Digitales (Digital Twins)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Modelado 3D y CAD inteligente</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Simulación discreta, continua e híbrida</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Temática 2 -->
+                <div class="card-3d bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition duration-300">
+                    <div class="text-4xl text-[#ffd700] mb-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sistemas autónomos y conectados en logística</h3>
+                    <ul class="space-y-2 text-gray-200">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Internet de las Cosas (IoT)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Vehículos guiados automáticos (AGV)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Móviles autónomos (AMR)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Robots colaborativos (cobots)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Sistemas ciberfísicos (CPS)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Comunicaciones 5G industriales</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Drones logísticos inteligentes</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Temática 3 -->
+                <div class="card-3d bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition duration-300">
+                    <div class="text-4xl text-[#ffd700] mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Analítica y datos inteligentes en logística</h3>
+                    <ul class="space-y-2 text-gray-200">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Big Data</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Business Intelligence (BI)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Analítica predictiva y prescriptiva</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Data Mining</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Blockchain para trazabilidad de datos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Visualización avanzada y dashboards interactivos</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Temática 4 -->
+                <div class="card-3d bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition duration-300">
+                    <div class="text-4xl text-[#ffd700] mb-4">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Inteligencia artificial y aprendizaje automático en logística</h3>
+                    <ul class="space-y-2 text-gray-200">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Machine Learning (ML)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Deep Learning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Procesamiento de lenguaje natural (NLP)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Visión por computadora</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Optimización inteligente de rutas y recursos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Mantenimiento predictivo basado en IA</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Temática 5 -->
+                <div class="card-3d bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/20 transition duration-300">
+                    <div class="text-4xl text-[#ffd700] mb-4">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sistemas ERP y Cloud Computing para logística</h3>
+                    <ul class="space-y-2 text-gray-200">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>ERP inteligentes (SAP, Oracle, Odoo, etc.)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Cloud Computing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Edge Computing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Integración mediante API y servicios web</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Plataformas colaborativas Web 3.0</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#ffd700] mt-1 mr-2"></i>
+                            <span>Ciberseguridad y gestión de accesos</span>
+                        </li>
+                    </ul>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ponencias Magistrales -->
+    <section id="magistrales" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Ponencias Magistrales</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-[#006633] to-[#00331a] mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Conferencias impartidas por expertos internacionales en logística y tecnologías 4.0</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <!-- Ponente 1 -->
+                <div class="speaker-card">
+                    <div class="speaker-inner">
+                        <div class="speaker-front">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Dr. Carlos Méndez" class="speaker-image">
+                            <div class="speaker-name">Dr. Carlos Méndez</div>
+                            <div class="speaker-topic">Transformación Digital en Logística</div>
+                            <div class="speaker-country">España</div>
+                        </div>
+                        <div class="speaker-back">
+                            <h3 class="text-xl font-bold mb-3">Biografía</h3>
+                            <div class="speaker-bio">
+                                <p>Director del Instituto de Logística Digital en Madrid. Experto en transformación digital de cadenas de suministro. Ha publicado más de 50 artículos científicos y 3 libros sobre logística 4.0.</p>
+                                <p class="mt-3">Miembro del Consejo Editorial de varias revistas internacionales de logística. Consultor para empresas Fortune 500 en estrategias de digitalización logística.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ponente 2 -->
+                <div class="speaker-card">
+                    <div class="speaker-inner">
+                        <div class="speaker-front">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Dra. Ana Rodríguez" class="speaker-image">
+                            <div class="speaker-name">Dra. Ana Rodríguez</div>
+                            <div class="speaker-topic">IA y Machine Learning en Supply Chain</div>
+                            <div class="speaker-country">México</div>
+                        </div>
+                        <div class="speaker-back">
+                            <h3 class="text-xl font-bold mb-3">Biografía</h3>
+                            <div class="speaker-bio">
+                                <p>Jefa del Departamento de Inteligencia Artificial Aplicada en el ITESM. Pionera en la aplicación de machine learning para optimización de rutas y predicción de demanda.</p>
+                                <p class="mt-3">Ha liderado proyectos de investigación financiados por CONACYT y colaboraciones con empresas como DHL y FedEx. Miembro IEEE y INFORMS.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ponente 3 -->
+                <div class="speaker-card">
+                    <div class="speaker-inner">
+                        <div class="speaker-front">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Dr. Roberto Silva" class="speaker-image">
+                            <div class="speaker-name">Dr. Roberto Silva</div>
+                            <div class="speaker-topic">Sostenibilidad en Cadena de Suministro</div>
+                            <div class="speaker-country">Brasil</div>
+                        </div>
+                        <div class="speaker-back">
+                            <h3 class="text-xl font-bold mb-3">Biografía</h3>
+                            <div class="speaker-bio">
+                                <p>Profesor Titular en la Universidad de São Paulo. Especialista en logística sostenible y economía circular. Autor de más de 80 publicaciones científicas.</p>
+                                <p class="mt-3">Consultor para el Banco Mundial y PNUD en proyectos de desarrollo sostenible. Premio COPA de Logística Sostenible 2023.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ponente 4 -->
+                <div class="speaker-card">
+                    <div class="speaker-inner">
+                        <div class="speaker-front">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Dra. María Fernanda" class="speaker-image">
+                            <div class="speaker-name">Dra. María Fernanda</div>
+                            <div class="speaker-topic">Blockchain en Logística</div>
+                            <div class="speaker-country">Colombia</div>
+                        </div>
+                        <div class="speaker-back">
+                            <h3 class="text-xl font-bold mb-3">Biografía</h3>
+                            <div class="speaker-bio">
+                                <p>Directora del Laboratorio de Tecnologías Emergentes en la Universidad de los Andes. Expertise en blockchain aplicado a la trazabilidad de productos.</p>
+                                <p class="mt-3">Fundadora de la startup LogChain Colombia. Ha publicado investigaciones en revistas Q1 sobre criptomonedas y smart contracts en logística.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ponente 5 -->
+                <div class="speaker-card">
+                    <div class="speaker-inner">
+                        <div class="speaker-front">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Dr. José Antonio" class="speaker-image">
+                            <div class="speaker-name">Dr. José Antonio</div>
+                            <div class="speaker-topic">Gemelos Digitales y Simulación</div>
+                            <div class="speaker-country">Chile</div>
+                        </div>
+                        <div class="speaker-back">
+                            <h3 class="text-xl font-bold mb-3">Biografía</h3>
+                            <div class="speaker-bio">
+                                <p>Jefe del Departamento de Simulación Industrial en la Universidad Católica de Chile. Pionero en el desarrollo de gemelos digitales para optimización de procesos.</p>
+                                <p class="mt-3">Miembro del comité ejecutivo de la Asociación Latinoamericana de Simulación. Ha dirigido más de 30 proyectos de investigación en colaboración con empresas mineras y manufactureras.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <!-- Ponente 5 -->
+                <div class="speaker-card">
+                    <div class="speaker-inner">
+                        <div class="speaker-front">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Dr. José Antonio" class="speaker-image">
+                            <div class="speaker-name">Dr. José Antonio</div>
+                            <div class="speaker-topic">Gemelos Digitales y Simulación</div>
+                            <div class="speaker-country">Chile</div>
+                        </div>
+                        <div class="speaker-back">
+                            <h3 class="text-xl font-bold mb-3">Biografía</h3>
+                            <div class="speaker-bio">
+                                <p>Jefe del Departamento de Simulación Industrial en la Universidad Católica de Chile. Pionero en el desarrollo de gemelos digitales para optimización de procesos.</p>
+                                <p class="mt-3">Miembro del comité ejecutivo de la Asociación Latinoamericana de Simulación. Ha dirigido más de 30 proyectos de investigación en colaboración con empresas mineras y manufactureras.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <!-- Ponente 5 -->
+                <div class="speaker-card">
+                    <div class="speaker-inner">
+                        <div class="speaker-front">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Dr. José Antonio" class="speaker-image">
+                            <div class="speaker-name">Dr. José Antonio</div>
+                            <div class="speaker-topic">Gemelos Digitales y Simulación</div>
+                            <div class="speaker-country">Chile</div>
+                        </div>
+                        <div class="speaker-back">
+                            <h3 class="text-xl font-bold mb-3">Biografía</h3>
+                            <div class="speaker-bio">
+                                <p>Jefe del Departamento de Simulación Industrial en la Universidad Católica de Chile. Pionero en el desarrollo de gemelos digitales para optimización de procesos.</p>
+                                <p class="mt-3">Miembro del comité ejecutivo de la Asociación Latinoamericana de Simulación. Ha dirigido más de 30 proyectos de investigación en colaboración con empresas mineras y manufactureras.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <!-- Ponente 5 -->
+                <div class="speaker-card">
+                    <div class="speaker-inner">
+                        <div class="speaker-front">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Dr. José Antonio" class="speaker-image">
+                            <div class="speaker-name">Dr. José Antonio</div>
+                            <div class="speaker-topic">Gemelos Digitales y Simulación</div>
+                            <div class="speaker-country">Chile</div>
+                        </div>
+                        <div class="speaker-back">
+                            <h3 class="text-xl font-bold mb-3">Biografía</h3>
+                            <div class="speaker-bio">
+                                <p>Jefe del Departamento de Simulación Industrial en la Universidad Católica de Chile. Pionero en el desarrollo de gemelos digitales para optimización de procesos.</p>
+                                <p class="mt-3">Miembro del comité ejecutivo de la Asociación Latinoamericana de Simulación. Ha dirigido más de 30 proyectos de investigación en colaboración con empresas mineras y manufactureras.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <!-- Ponente 5 -->
+                <div class="speaker-card">
+                    <div class="speaker-inner">
+                        <div class="speaker-front">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Dr. José Antonio" class="speaker-image">
+                            <div class="speaker-name">Dr. José Antonio</div>
+                            <div class="speaker-topic">Gemelos Digitales y Simulación</div>
+                            <div class="speaker-country">Chile</div>
+                        </div>
+                        <div class="speaker-back">
+                            <h3 class="text-xl font-bold mb-3">Biografía</h3>
+                            <div class="speaker-bio">
+                                <p>Jefe del Departamento de Simulación Industrial en la Universidad Católica de Chile. Pionero en el desarrollo de gemelos digitales para optimización de procesos.</p>
+                                <p class="mt-3">Miembro del comité ejecutivo de la Asociación Latinoamericana de Simulación. Ha dirigido más de 30 proyectos de investigación en colaboración con empresas mineras y manufactureras.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda del Evento -->
+    <section id="agenda" class="py-20 bg-gradient-to-br from-[#006633] to-[#00331a] text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Agenda del Evento</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-[#ffd700] to-orange-500 mx-auto mb-8"></div>
+                <p class="text-xl max-w-3xl mx-auto">Programa detallado para los días 26 y 27 de noviembre de 2025</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Día 1: Miercoles 26 -->
+                <div class="agenda-day">
+                    <div class="agenda-header">
+                        <h3 class="text-2xl font-bold">Miércoles 26 de Noviembre</h3>
+                        <p class="opacity-80">Primer Día del Evento</p>
+                    </div>
+                    <div class="agenda-item">
+                        <div class="time-slot">07:00 - 08:00</div>
+                        <div class="event-details">
+                            <h4>Registro de Participantes</h4>
+                            <span class="event-type">Recepción y entrega de materiales</span>
+                        </div>
+                    </div>
+                    <div class="agenda-item">
+                        <div class="time-slot">08:00 - 08:30</div>
+                        <div class="event-details">
+                            <h4>Acto de Inauguración</h4>
+                            <span class="event-type">Palabras de bienvenida y presentación del evento</span>
+                        </div>
+                    </div>
+
+                                        <div class="agenda-item">
+                        <div class="time-slot">08:30 - 5:30</div>
+                        <div class="event-details">
+                            <h4>Por confirmar acorde al número de ponentes</h4>
+                            <span class="event-type"></span>
+                        </div>
+                    </div>
+
+                    
+                      <!-- Día 1: Miercoles 26 
+                    <div class="agenda-item">
+                        <div class="time-slot">08:30 - 9:10</div>
+                        <div class="event-details">
+                            <h4>Ponencia Magistral: Transformación Digital en Logística</h4>
+                            <span class="event-type">Dr. Carlos Méndez (España)</span>
+                        </div>
+                    </div>
+                        <div class="agenda-item">
+                        <div class="time-slot">09:15 - 9:55</div>
+                        <div class="event-details">
+                            <h4>Ponencia Magistral: Transformación Digital en Logística</h4>
+                            <span class="event-type">Dr. Carlos Méndez (España)</span>
+                        </div>
+                    </div>
+                    <div class="agenda-item">
+                        <div class="time-slot">10:00 - 10:15</div>
+                        <div class="event-details">
+                            <h4>Refrigerio Libre</h4>
+                            <span class="event-types" style="color: darkgoldenrod;">Totos los participantes tienen un tiempo para disfrutar de un refrigerio libre</span>
+                        </div>
+                    </div>
+
+                        <div class="agenda-item">
+                        <div class="time-slot">10:15- 10:55</div>
+                        <div class="event-details">
+                            <h4>Ponencia Magistral: Transformación Digital en Logística</h4>
+                            <p>Dr. Carlos Méndez (España)</p>
+                            <span class="event-type">Conferencia</span>
+                        </div>
+                    </div> 
+
+                    
+                    <div class="agenda-item">
+                        <div class="time-slot">11:00- 11:40</div>
+                        <div class="event-details">
+                            <h4>Ponencia Magistral: Transformación Digital en Logística</h4>
+                            <p>Dr. Carlos Méndez (España)</p>
+                            <span class="event-type">Conferencia</span>
+                        </div>
+                    </div> 
+                    
+
+                    <div class="agenda-item">
+                        <div class="time-slot">11:45- 12:30</div>
+                        <div class="event-details">
+                            <h4>Ponencia Magistral: Transformación Digital en Logística</h4>
+                            <p>Dr. Carlos Méndez (España)</p>
+                            <span class="event-type">Conferencia</span>
+                        </div>
+                    </div> 
+
+                    <div class="agenda-item">
+                        <div class="time-slot">12:30 - 2:00</div>
+                        <div class="event-details">
+                            <h4>Almuerzo</h4>
+                            <p>Tiempo libre para networking</p>
+                            <span class="event-type">Almuerzo</span>
+                        </div>
+                    </div>
+                    <div class="agenda-item">
+                        <div class="time-slot">14:00- 14:40</div>
+                        <div class="event-details">
+                            <h4>Ponencia Magistral: Transformación Digital en Logística</h4>
+                            <p>Dr. Carlos Méndez (España)</p>
+                            <span class="event-type">Conferencia</span>
+                        </div>
+                    </div> 
+
+                    <div class="agenda-item">
+                        <div class="time-slot">14:45- 15:25</div>
+                        <div class="event-details">
+                            <h4>Ponencia Magistral: Transformación Digital en Logística</h4>
+                            <p>Dr. Carlos Méndez (España)</p>
+                            <span class="event-type">Conferencia</span>
+                        </div>
+                    </div> 
+
+                    <div class="agenda-item">
+                        <div class="time-slot">15:25 - 15:40</div>
+                        <div class="event-details">
+                            <h4>Refrigerio Libre</h4>
+                            <p>Totos los participantes tienen un tiempo para disfrutar de un refrigerio libre</p>
+                            <span class="event-type">Refrigerio</span>
+                        </div>
+                    </div>
+                    <div class="agenda-item">
+                        <div class="time-slot">15:45- 16:25</div>
+                        <div class="event-details">
+                            <h4>Ponencia Magistral: Transformación Digital en Logística</h4>
+                            <p>Dr. Carlos Méndez (España)</p>
+                            <span class="event-type">Conferencia</span>
+                        </div>
+                    </div> 
+
+                        <div class="agenda-item">
+                        <div class="time-slot">16:30- 17:10</div>
+                        <div class="event-details">
+                            <h4>Ponencia Magistral: Transformación Digital en Logística</h4>
+                            <p>Dr. Carlos Méndez (España)</p>
+                            <span class="event-type">Conferencia</span>
+                        </div>
+                    </div> 
+
+                        <div class="agenda-item">
+                        <div class="time-slot">16:30- 17:10</div>
+                        <div class="event-details">
+                            <h4>Ponencia Magistral: Transformación Digital en Logística</h4>
+                            <p>Dr. Carlos Méndez (España)</p>
+                            <span class="event-type">Conferencia</span>
+                        </div>
+                    </div> 
+
+                    <div class="agenda-item">
+                        <div class="time-slot">17:15- 17:30</div>
+                        <div class="event-details">
+                            <h4>Ponencia Magistral: Transformación Digital en Logística</h4>
+                            <p>Dr. Carlos Méndez (España)</p>
+                            <span class="event-type">Clausuara</span>
+                        </div>
+                    </div> 
+-->
+                </div>
+                
+                <!-- Día 2: Miércoles 27 -->
+                <div class="agenda-day">
+                    <div class="agenda-header">
+                        <h3 class="text-2xl font-bold">Jueves 28 de Noviembre</h3>
+                        <p class="opacity-80">Segundo Día del Evento</p>
+                    </div>
+                    <div class="agenda-item">
+                        <div class="time-slot">08:00 - 09:00</div>
+                        <div class="event-details">
+                            <h4>Presentación Stands - Bienvenida</p>
+                            <span class="event-type">Conferencia</span>
+                        </div>
+                    </div>
+                    <div class="agenda-item">
+                        <div class="time-slot">9:00 - 12:00</div>
+                        <div class="event-details">
+                            <h4>Presentación de Stands</h4>
+                            <span class="event-type">Networking y exposición de stands</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Directrices de Presentación -->
+    <section id="directrices" class="py-20 tech-section">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Directrices de Presentación</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-[#006633] to-[#00331a] mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Recepción de Resúmenes -->
+                <div class="card-3d bg-white p-8 rounded-2xl shadow-xl">
+                    <div class="text-4xl text-[#006633] mb-6">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#006633] mb-4">Recepción de Resúmenes</h3>
+                    <ul class="space-y-3 text-gray-700 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#006633] mt-1 mr-2"></i>
+                            <span>Máximo 350 palabras en un solo párrafo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#006633] mt-1 mr-2"></i>
+                            <span>Incluir metodología, resultados y conclusiones</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#006633] mt-1 mr-2"></i>
+                            <span>5 palabras clave</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#006633] mt-1 mr-2"></i>
+                            <span>Idioma: Español</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#006633] mt-1 mr-2"></i>
+                            <span>Escrito en pasado</span>
+                        </li>
+                    </ul>
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-[#006633]">
+                        <p class="text-sm font-semibold text-gray-800">Fecha límite: Viernes 7 de nov. de 2025, 23:00 h</p>
+                    </div>
+                </div>
+                
+                <!-- Recepción de Capítulos -->
+                <div class="card-3d bg-white p-8 rounded-2xl shadow-xl">
+                    <div class="text-4xl text-[#004d26] mb-6">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#006633] mb-4">Recepción de Capítulos</h3>
+                    <ul class="space-y-3 text-gray-700 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#004d26] mt-1 mr-2"></i>
+                            <span>Formato Word siguiendo plantilla oficial</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#004d26] mt-1 mr-2"></i>
+                            <span>Máximo 14 páginas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#004d26] mt-1 mr-2"></i>
+                            <span>Originalidad y relevancia temática</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#004d26] mt-1 mr-2"></i>
+                            <span>Entre 1 y 2 autores</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#004d26] mt-1 mr-2"></i>
+                            <span>Precisión de citas y figuras</span>
+                        </li>
+                    </ul>
+                    <div class="bg-orange-50 p-4 rounded-lg border-l-4 border-[#004d26]">
+                        <p class="text-sm font-semibold text-gray-800">Fecha límite: Martes 25 de nov. de 2025, 23:00 h</p>
+                    </div>
+                    <div class="mt-4 bg-green-50 p-4 rounded-lg">
+                        <p class="text-sm text-gray-700">Publicación garantizada en Editorial UPEC</p>
+                        <a href="https://www.publicacionesupec.org/index.php/carchi" target="_blank" class="text-[#006633] font-semibold hover:underline">Ver sitio editorial</a>
+                    </div>
+                </div>
+                
+                <!-- Stands/Posters -->
+                <div class="card-3d bg-white p-8 rounded-2xl shadow-xl">
+                    <div class="text-4xl text-[#00331a] mb-6">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#006633] mb-4">Stands/Posters</h3>
+                    <ul class="space-y-3 text-gray-700 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#00331a] mt-1 mr-2"></i>
+                            <span>Documento Word con resumen inicial</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#00331a] mt-1 mr-2"></i>
+                            <span>Máximo 5 estudiantes por stand</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#00331a] mt-1 mr-2"></i>
+                            <span>Presentación física con maquetas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#00331a] mt-1 mr-2"></i>
+                            <span>Premiación a los 3 mejores</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-[#00331a] mt-1 mr-2"></i>
+                            <span>Trabajo en equipo evaluado</span>
+                        </li>
+                    </ul>
+                    <div class="bg-green-50 p-4 rounded-lg border-l-4 border-[#00331a]">
+                        <p class="text-sm font-semibold text-gray-800">Fecha límite: Viernes 7 de nov. de 2025, 23:00 h</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fechas Importantes -->
+    <section id="fechas" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Fechas Importantes</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-[#006633] to-[#00331a] mx-auto mb-8"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[#006633] to-[#00331a]"></div>
+                    
+                    <!-- Timeline items -->
+                    <div class="space-y-12">
+                        <!-- Item 1 -->
+                        <div class="timeline-item flex items-center w-full">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="bg-white p-6 rounded-lg shadow-lg inline-block">
+                                    <h3 class="font-bold text-lg text-[#006633]">Recepción de Resúmenes</h3>
+                                    <p class="text-gray-600">Ponencias y Stands/Posters</p>
+                                    <div class="mt-2 bg-blue-50 p-2 rounded">
+                                        <p class="text-sm font-semibold">Hasta el viernes 7 de noviembre de 2025, 23:00 h</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-12 h-12 bg-[#006633] rounded-full flex items-center justify-center text-white z-10 relative">
+                                <i class="fas fa-file-upload"></i>
+                            </div>
+                            <div class="w-1/2"></div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="timeline-item flex items-center w-full">
+                            <div class="w-1/2"></div>
+                            <div class="w-12 h-12 bg-[#ffd700] rounded-full flex items-center justify-center text-[#006633] z-10 relative">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="w-1/2 pl-8">
+                                <div class="bg-white p-6 rounded-lg shadow-lg inline-block">
+                                    <h3 class="font-bold text-lg text-[#ffd700]">Notificación de Aceptación</h3>
+                                    <p class="text-gray-600">Resúmenes y Stands/Posters</p>
+                                    <div class="mt-2 bg-orange-50 p-2 rounded">
+                                        <p class="text-sm font-semibold">Viernes 14 de noviembre de 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div class="timeline-item flex items-center w-full">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="bg-white p-6 rounded-lg shadow-lg inline-block">
+                                    <h3 class="font-bold text-lg text-[#004d26]">Recepción de Capítulos</h3>
+                                    <p class="text-gray-600">Modalidad Ponencia + Capítulo</p>
+                                    <div class="mt-2 bg-green-50 p-2 rounded">
+                                        <p class="text-sm font-semibold">Hasta el martes 25 de noviembre de 2025, 23:00 h</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-12 h-12 bg-[#004d26] rounded-full flex items-center justify-center text-white z-10 relative">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="w-1/2"></div>
+                        </div>
+                        
+                        <!-- Item 4 -->
+                        <div class="timeline-item flex items-center w-full">
+                            <div class="w-1/2"></div>
+                            <div class="w-12 h-12 bg-[#8e44ad] rounded-full flex items-center justify-center text-white z-10 relative">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="w-1/2 pl-8">
+                                <div class="bg-white p-6 rounded-lg shadow-lg inline-block">
+                                    <h3 class="font-bold text-lg text-[#8e44ad]">Aprobación de Capítulos</h3>
+                                    <p class="text-gray-600">Notificación oficial</p>
+                                    <div class="mt-2 bg-purple-50 p-2 rounded">
+                                        <p class="text-sm font-semibold">Domingo 7 de diciembre de 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 5 -->
+                        <div class="timeline-item flex items-center w-full">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="bg-white p-6 rounded-lg shadow-lg inline-block">
+                                    <h3 class="font-bold text-lg text-[#e67e22]">Evento Principal</h3>
+                                    <p class="text-gray-600">Seminario Internacional</p>
+                                    <div class="mt-2 bg-yellow-50 p-2 rounded">
+                                        <p class="text-sm font-semibold">26 y 27 de noviembre de 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-12 h-12 bg-[#e67e22] rounded-full flex items-center justify-center text-white z-10 relative">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="w-1/2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Ubicación del Evento -->
+    <section id="ubicacion" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Ubicación del Evento</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-[#006633] to-[#00331a] mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="card-3d bg-white p-8 rounded-2xl shadow-xl">
+                    <h3 class="text-2xl font-bold text-[#006633] mb-6">Universidad Politécnica Estatal del Carchi (UPEC)</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        El II Seminario Internacional de Gestión Logística, Cadena de Suministro y Transporte (SILT 2025) se llevará a cabo en la Universidad Politécnica Estatal del Carchi (UPEC), ubicada en la ciudad de Tulcán, provincia del Carchi, Ecuador.
+                    </p>
+                    <p class="text-gray-700 mb-8 leading-relaxed">
+                        Las actividades académicas y exposiciones se desarrollarán en las instalaciones de la Carrera de Logística y Transporte, específicamente en el Campus Universitario Tulcán, que cuenta con espacios equipados para conferencias, talleres y presentaciones de stands académicos.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Dirección</h4>
+                                <p class="text-gray-600">Carrera de Logística y Transporte, Tulcán, Carchi, Ecuador</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-building text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Instalaciones</h4>
+                                <p class="text-gray-600">Campus Universitario Tulcán con espacios modernos para conferencias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-3d bg-white p-8 rounded-2xl shadow-xl">
+                    <h3 class="text-2xl font-bold text-[#006633] mb-6">Mapa de Ubicación</h3>
+                    <div class="bg-gray-200 h-96 rounded-xl overflow-hidden mb-6">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.9750440000003!2d-77.7166667!3d0.8166667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e29f0a0a0a0a0a0%3A0x0!2sUniversidad%20Polit%C3%A9cnica%20Estatal%20del%20Carchi!5e0!3m2!1ses!2sec!4v1623251234567!5m2!1ses!2sec" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-6 rounded-xl mb-6">
+                        <h4 class="font-bold text-gray-800 mb-3">Alojamiento</h4>
+                        <p class="text-gray-700">Recomendamos hoteles cercanos al campus universitario. Información detallada será enviada a participantes registrados.</p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-xl">
+                        <h4 class="font-bold text-gray-800 mb-3">Transporte</h4>
+                        <p class="text-gray-700">Servicio de transporte desde el aeropuerto y estación de buses hasta el campus estará disponible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comité Organizador -->
+    <section id="comite" class="py-20 bg-gradient-to-br from-[#006633] to-[#00331a] text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Comité Organizador y Científico</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-[#ffd700] to-orange-500 mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="card-3d bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-[#ffd700]">Organizadores Principales</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center bg-white/10 p-4 rounded-xl">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl mr-4">DA</div>
+                            <div>
+                                <h4 class="font-bold text-xl">Dr. Luis Omar Alpala</h4>
+                                <p class="text-gray-200">Coordinador General</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center bg-white/10 p-4 rounded-xl">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 font-bold text-xl mr-4">DM</div>
+                            <div>
+                                <h4 class="font-bold text-xl">Dra. Liliana Montenegro</h4>
+                                <p class="text-gray-200">Coordinadora Académica</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-3d bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-[#ffd700]">Comités</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white/10 p-6 rounded-xl">
+                            <h4 class="font-bold text-lg mb-3">Comité Organizador</h4>
+                            <ul class="space-y-2 text-gray-200">
+                                <li class="flex items-center"><i class="fas fa-check-circle text-[#ffd700] mr-2"></i> Docentes y Coordinación Académica</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-[#ffd700] mr-2"></i> Estudiantes de Sexto Nivel</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-[#ffd700] mr-2"></i> Laboratorios de Realidad Extendida</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-[#ffd700] mr-2"></i> Equipo de Comunicación Institucional</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white/10 p-6 rounded-xl">
+                            <h4 class="font-bold text-lg mb-3">Comité Científico</h4>
+                            <ul class="space-y-2 text-gray-200">
+                                <li class="flex items-center"><i class="fas fa-check-circle text-[#006633] mr-2"></i> Investigadores UPEC</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-[#006633] mr-2"></i> Colaboradores Nacionales</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-[#006633] mr-2"></i> Representantes Universidades Aliadas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de Contacto -->
+    <section id="contacto" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Mayor Información</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-[#006633] to-[#00331a] mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Para consultas, inscripciones o envío de trabajos, contáctanos a través de los siguientes medios</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="card-3d bg-white p-8 rounded-2xl shadow-xl text-center">
+                    <div class="text-4xl text-[#006633] mb-4">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Correo Electrónico</h3>
+                    <p class="mb-4">logistica_transporte@upec.edu.ec</p>
+                    <a href="mailto:logistica_transporte@upec.edu.ec" class="btn-animated bg-[#006633] hover:bg-[#004d26] text-white px-6 py-2 rounded-full hover:bg-[#004d26] transition duration-300 inline-block">
+                        Enviar Email
+                    </a>
+                </div>
+                
+                <div class="card-3d bg-white p-8 rounded-2xl shadow-xl text-center">
+                    <div class="text-4xl text-[#004d26] mb-4">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Teléfono</h3>
+                    <p class="mb-4">(+593) 0998654247</p>
+                    <a href="tel:+5930998654247" class="btn-animated bg-[#004d26] hover:bg-[#00331a] text-white px-6 py-2 rounded-full hover:bg-[#00331a] transition duration-300 inline-block">
+                        Llamar Ahora
+                    </a>
+                </div>
+                
+                <div class="card-3d bg-white p-8 rounded-2xl shadow-xl text-center">
+                    <div class="text-4xl text-[#3b5998] mb-4">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Redes Sociales</h3>
+                    <p class="mb-4">Síguenos en Facebook</p>
+                    <a href="https://www.facebook.com/Ing.logistrans" target="_blank" class="btn-animated bg-[#3b5998] hover:bg-[#344e86] text-white px-6 py-2 rounded-full hover:bg-[#344e86] transition duration-300 inline-block">
+                        Ver Perfil
+                    </a>
+                </div>
+            </div>
+            
+            <div class="card-3d bg-white p-8 rounded-2xl shadow-xl text-center">
+                <h3 class="text-2xl font-bold text-[#006633] mb-4">Sitio Web para Registro Easy Chair</h3>
+                <p class="text-xl mb-6">https://www.publicacionesupec.org/index.php/carchi</p>
+                <a href="https://www.publicacionesupec.org/index.php/carchi" target="_blank" class="btn-animated bg-[#ffd700] hover:bg-[#ffc400] text-[#006633] px-8 py-3 rounded-full font-bold hover:bg-[#ffc400] transition duration-300 inline-block">
+                    Visitar Sitio Web
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enganche Final -->
+    <section class="py-20 bg-gradient-to-r from-[#006633] to-[#00331a] text-white">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">"Tendencias emergentes en Logística y Cadena de Suministro"</h2>
+                <p class="text-2xl mb-12">Únete a nosotros en Tulcán para explorar las innovaciones que están transformando la industria logística.</p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="#inscripcion" class="btn-animated bg-[#ffd700] hover:bg-[#ffc400] text-[#006633] px-10 py-5 rounded-xl font-bold text-xl transition duration-300 shadow-2xl transform hover:scale-105">
+                        <i class="fas fa-calendar-check mr-3"></i>Inscríbete Ahora
+                    </a>
+                    <a href="#contacto" class="btn-animated bg-transparent border-2 border-white hover:bg-white hover:text-[#006633] text-white px-10 py-5 rounded-xl font-bold text-xl transition duration-300 shadow-2xl transform hover:scale-105">
+                        <i class="fas fa-info-circle mr-3"></i>Contacta con Nosotros
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-gradient-to-r from-[#006633] to-[#00331a] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-blue-700 transition duration-300 hidden z-50">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Floating sidebar functionality
+        const sidebarItems = document.querySelectorAll('.sidebar-item');
+        
+        sidebarItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.width = 'auto';
+                item.style.padding = '0 1.5rem';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.width = '60px';
+                item.style.padding = '0';
+            });
+        });
+        
+        // Animación de entrada para elementos
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+        
+        // Observar elementos para animación
+        document.querySelectorAll('.feature-card, .stats-card, .innovation-card, .process-step, .specialization-card, .tech-card, .gallery-item').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Efecto hover para tarjetas tecnológicas
+        const techCards = document.querySelectorAll('.tech-card');
+        techCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+            });
+        });
+        
+        // Image slider functionality
+        const sliderImages = document.querySelectorAll('.slider-image');
+        const sliderIndicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.querySelector('.slider-nav.prev');
+        const nextBtn = document.querySelector('.slider-nav.next');
+        let currentImageIndex = 0;
+        
+        function showImage(index) {
+            sliderImages.forEach(img => img.classList.remove('active'));
+            sliderImages[index].classList.add('active');
+            
+            sliderIndicators.forEach(indicator => indicator.classList.remove('active'));
+            sliderIndicators[index].classList.add('active');
+        }
+        
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % sliderImages.length;
+            showImage(currentImageIndex);
+        }
+        
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + sliderImages.length) % sliderImages.length;
+            showImage(currentImageIndex);
+        }
+        
+        // Auto advance slider
+        setInterval(nextImage, 4000);
+        
+        // Event listeners for navigation
+        prevBtn.addEventListener('click', prevImage);
+        nextBtn.addEventListener('click', nextImage);
+        
+        // Event listeners for indicators
+        sliderIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentImageIndex = index;
+                showImage(currentImageIndex);
+            });
+        });
+        
+        // Inscripción buttons
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Inscribirse')) {
+                button.addEventListener('click', () => {
+                    alert('¡Próximamente estará disponible el sistema de inscripción!');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
